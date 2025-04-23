@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="src.mpp2024.clientserverapp.OficiuLoggedIn">
+
+    <AnchorPane layoutX="0" layoutY="0" prefWidth="900" prefHeight="600">
+
+        <VBox alignment="CENTER" spacing="20" layoutX="0" layoutY="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <Label text="Welcome to Oficiu" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <Label fx:id="userNameLabel" text="User Info" style="-fx-font-size: 14px;" />
+        </VBox>
+
+        <HBox spacing="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="80" AnchorPane.bottomAnchor="20">
+
+            <VBox alignment="TOP_LEFT" spacing="15" prefWidth="350">
+                <Label text="Probele disponibile pentru înscriere" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                <ListView fx:id="competitionsListView" prefWidth="350" prefHeight="400" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="15" prefWidth="300">
+                <Label text="Căutare Participanți" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                <Label text="Selectați Proba:" />
+                <ComboBox fx:id="probaComboBox" promptText="Alege Proba" prefWidth="250" />
+                <Label text="Selectați id-ul categoriei de vârstă:" />
+                <ComboBox fx:id="categorieComboBox" promptText="Alege Categoria" prefWidth="250" />
+                <Button fx:id="searchButton" text="Căutare" onAction="#onSearchButtonClick" prefWidth="150" />
+                <Label text="Participanți Înscriși:" />
+                <ListView fx:id="participantsListView" prefWidth="250" prefHeight="200" />
+            </VBox>
+
+            <VBox alignment="CENTER" spacing="15" prefWidth="300">
+                <Label text="Înscriere Participant" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                <Label text="CNP:" />
+                <TextField fx:id="cnpTextField" promptText="Introduceți CNP" prefWidth="250" />
+                <Label text="Nume:" />
+                <TextField fx:id="numeTextField" promptText="Introduceți Numele" prefWidth="250" />
+                <Label text="Vârsta:" />
+                <TextField fx:id="varstaTextField" promptText="Introduceți Vârsta" prefWidth="250" />
+                <Label text="Selectați Proba:" />
+                <ComboBox fx:id="probaComboBox2" promptText="Alege Proba" prefWidth="250" />
+                <Button fx:id="inscriereButton" text="Înscrie" onAction="#inscriereParticipant" prefWidth="150" />
+            </VBox>
+        </HBox>
+
+        <Button fx:id="logoutButton" text="Logout" onAction="#logout" prefWidth="150" />
+
+    </AnchorPane>
+</AnchorPane>

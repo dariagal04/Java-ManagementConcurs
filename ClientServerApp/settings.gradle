@@ -1,0 +1,8 @@
+rootProject.name = "ClientServerApp"
+include 'ConcursModel'
+include 'ConcursNetwork'
+include 'ConcursPersistence'
+include 'ClientServer'
+include 'ConcursServer'
+include 'ConcursService'
+
